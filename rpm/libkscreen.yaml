@@ -1,0 +1,65 @@
+Name         : libkscreen
+Version      : 2.0.0
+Release      : 1
+Group        : System/Base
+License      : LGPLv2.1+
+Summary      : API to control screen settings
+Description  : |
+  API to control screen settings.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5X11Extras
+    - x11-xcb
+    - xrandr
+Requires:
+    - kf5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING COPYING.LIB"
+    - "%{_kf5_libdir}/libKF5Screen.so.*"
+    - "%{_kf5_plugindir}/kscreen/"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_libdir}/libKF5Screen.so"
+          - "%{_kf5_libdir}/cmake/KF5Screen"
+          - "%{_kf5_includedir}/KScreen"
+          - "%{_kf5_includedir}/kscreen_version.h"
+          - "%{_qt5_datadir}/mkspecs/modules/qt_KScreen.pri"
+          - "%{_kf5_libdir}/pkgconfig/kscreen2.pc"

@@ -1,0 +1,4 @@
+[submodule "upstream"]
+	path = upstream
+	url = git://anongit.kde.org/libkscreen.git
+	branch = frameworks
