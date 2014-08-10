@@ -9,7 +9,7 @@ Name:       libkscreen
 # << macros
 
 Summary:    API to control screen settings
-Version:    2.0.0
+Version:    5.0.91
 Release:    1
 Group:      System/Base
 License:    LGPLv2.1+
