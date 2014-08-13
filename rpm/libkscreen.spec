@@ -77,7 +77,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %doc COPYING COPYING.LIB
 %{_kf5_libdir}/libKF5Screen.so.*
-%{_kf5_plugindir}/kscreen/
+%{_kf5_plugindir}/*
 # >> files
 # << files
 
@@ -87,7 +87,7 @@ rm -rf %{buildroot}
 %{_kf5_libdir}/cmake/KF5Screen
 %{_kf5_includedir}/KScreen
 %{_kf5_includedir}/kscreen_version.h
-%{_qt5_datadir}/mkspecs/modules/qt_KScreen.pri
+%{_kf5_mkspecsdir}/qt_KScreen.pri
 %{_kf5_libdir}/pkgconfig/kscreen2.pc
 # >> files devel
 # << files devel
