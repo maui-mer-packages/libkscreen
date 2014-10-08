@@ -7,7 +7,6 @@ Summary      : API to control screen settings
 Description  : |
   API to control screen settings.
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
